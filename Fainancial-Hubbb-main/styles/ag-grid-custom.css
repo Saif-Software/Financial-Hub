@@ -1,0 +1,155 @@
+/* Custom AgGrid theme for RTL Arabic support */
+.ag-theme-alpine {
+  --ag-font-family: 'Cairo', sans-serif;
+  --ag-header-background-color: #f8fafc;
+  --ag-border-color: #e2e8f0;
+  --ag-row-border-color: #e2e8f0;
+  --ag-odd-row-background-color: #ffffff;
+  --ag-even-row-background-color: #f9fafb;
+  --ag-header-font-size: 14px;
+  --ag-cell-font-size: 13px;
+  --ag-font-size: 13px;
+}
+
+/* RTL specific styles */
+.ag-theme-alpine[dir="rtl"] {
+  direction: rtl;
+}
+
+.ag-theme-alpine[dir="rtl"] .ag-header-cell {
+  text-align: right;
+}
+
+.ag-theme-alpine[dir="rtl"] .ag-cell {
+  text-align: right;
+}
+
+/* Custom cell styles */
+.ag-theme-alpine .ag-cell {
+  padding: 8px 12px;
+  border-right: 1px solid var(--ag-border-color);
+}
+
+.ag-theme-alpine .ag-header-cell {
+  padding: 8px 12px;
+  border-right: 1px solid var(--ag-border-color);
+  font-weight: 600;
+  color: #374151;
+}
+
+.ag-theme-alpine .ag-row:hover {
+  background-color: #f3f4f6;
+}
+
+/* Status badge styles */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status-approved {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.status-rejected {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.status-completed {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.status-draft {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+.status-deleted {
+  background-color: #fed7aa;
+  color: #9a3412;
+}
+
+/* Action buttons */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.action-button {
+  padding: 4px 8px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.action-button:hover {
+  background-color: #f3f4f6;
+}
+
+.action-button.view {
+  color: #2563eb;
+}
+
+.action-button.view:hover {
+  color: #1d4ed8;
+}
+
+.action-button.edit {
+  color: #6b7280;
+}
+
+.action-button.edit:hover {
+  color: #4b5563;
+}
+
+.action-button.delete {
+  color: #dc2626;
+}
+
+.action-button.delete:hover {
+  color: #b91c1c;
+}
+
+/* Attachment cell */
+.attachment-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.attachment-text {
+  font-size: 13px;
+  color: #374151;
+}
+
+.attachment-remove {
+  cursor: pointer;
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+.attachment-remove:hover {
+  color: #ef4444;
+}
+
+.attachment-icon {
+  color: #9ca3af;
+  cursor: pointer;
+}
+
+.attachment-icon:hover {
+  color: #6b7280;
+}
