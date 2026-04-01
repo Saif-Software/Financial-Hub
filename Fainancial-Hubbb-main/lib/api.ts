@@ -2,7 +2,7 @@
 // lib/api.ts  —  FinancialsHub API Service
 // ══════════════════════════════════════════════════════════
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? 'https://financehub.runasp.net/api'
+const BASE_URL = (process.env.NEXT_PUBLIC_API_URL ?? 'https://financehub.runasp.net/api').replace('http://', 'https://')
 
 // ── Helper: fetch wrapper ───────────────────────────────
 async function request<T>(
@@ -171,7 +171,7 @@ export const attachmentsApi = {
     return request(`TransactionReport/attachments/${mediaId}`, { method: 'DELETE' })
   },
   fullUrl(filePath: string): string {
-    const backendBase = (process.env.NEXT_PUBLIC_API_URL ?? 'https://financehub.runasp.net/api').replace('/api', '')
+    const backendBase = (process.env.NEXT_PUBLIC_API_URL ?? 'https://financehub.runasp.net/api').replace('http://', 'https://').replace('/api', '')
     return `${backendBase}${filePath}`
   },
 }
