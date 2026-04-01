@@ -2,7 +2,8 @@
 // lib/api.ts  —  FinancialsHub API Service
 // ══════════════════════════════════════════════════════════
 
-const BASE_URL = (process.env.NEXT_PUBLIC_API_URL ?? 'https://financehub.runasp.net/api').replace('http://', 'https://')
+// Using local /api proxy to bypass CORS (handled in next.config.mjs)
+const BASE_URL = '/api'
 
 // ── Helper: fetch wrapper ───────────────────────────────
 async function request<T>(
@@ -171,7 +172,7 @@ export const attachmentsApi = {
     return request(`TransactionReport/attachments/${mediaId}`, { method: 'DELETE' })
   },
   fullUrl(filePath: string): string {
-    const backendBase = (process.env.NEXT_PUBLIC_API_URL ?? 'https://financehub.runasp.net/api').replace('http://', 'https://').replace('/api', '')
+    const backendBase = 'https://financehub.runasp.net'
     return `${backendBase}${filePath}`
   },
 }
